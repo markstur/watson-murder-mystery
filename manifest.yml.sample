@@ -1,15 +1,17 @@
 applications:
 - services:
-  - conversation-bot
-  host: botstarter
+  - International Bot Machines Mystery
+  host: bluedo2-stage
   disk: 512M
-  name: botstarter
+  name: bluedo2-stage
   command: node app.js
   path: .
   domain: mybluemix.net
   memory: 512M
   instances: 1
-declared-services:
-  conversation-bot:
-    label: conversation
-    plan:  free
+  env:
+    CONVERSATION_SERVICE: <SERVICE_NAME>
+    WORKSPACE_MANAGER: <WORKSPACE_ID>
+    WORKSPACE_DESIGNER: <WORKSPACE_ID>
+    WORKSPACE_DEVELOPER: <WORKSPACE_ID>
+    WORKSPACE_WATSON: <WORKSPACE_ID>

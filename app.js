@@ -5,20 +5,19 @@
 *************************************************************************************************/
 "use strict";
 
-require('dotenv').config();
+require('dotenv').config({silent : true});
 
 var _ = require('lodash'),
     async = require('async'),
     express = require('express'),
     cfenv = require("cfenv"),
-    appEnv = cfenv.getAppEnv(),
     app = express(),
     bodyParser = require('body-parser'),
     watson = require('watson-developer-cloud');
 
 var localVCAP = undefined;
 try {
-  localVCAP = require('./local-vcap.json');
+    localVCAP = require('./local-vcap.json');
 } catch (err) {
   // local-vcap file won't exist when deployed
 }
@@ -32,7 +31,7 @@ app.use(bodyParser());
 
 app.use(express.static(__dirname + '/public'));
 var appEnv = cfenv.getAppEnv({
-  vcap : localVCAP || {}
+    vcap : localVCAP || {}
 });
 app.listen(appEnv.port, '0.0.0.0', function() {
     console.log("server starting on " + appEnv.url);
@@ -44,8 +43,8 @@ app.listen(appEnv.port, '0.0.0.0', function() {
 
 *************************************************************************************************/
 var config = _.merge(appEnv.getServiceCreds(process.env.CONVERSATION_SERVICE), {
-  version_date : '2016-07-11',
-  version : 'v1'
+    version_date : '2016-07-11',
+    version : 'v1'
 });
 var conversation = watson.conversation(config);
 
