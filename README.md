@@ -2,11 +2,12 @@
 
 ## Overview
 
-Basic multi-chatbot dialog for solving the mysterious murder of Dr Redshirt, lab director at
-International Bot Machines. You must investigate the murder and subsequent disappearance of
-Dr Redshirt with the help of Dr Watson, and the questionable help of several suspects in
-this cognitive case, to reveal the identity of a most dastardly killer.
+Basic multi-chatbot dialog for solving the mysterious murder of Dr Redshirt, lab director at International Bot Machines.
+
+You must investigate the murder and subsequent disappearance of Dr Redshirt with the help of Dr Watson, and the questionable help of several suspects in this cognitive case, to reveal the identity of a most dastardly killer.
 
 Each character in the case is a separate chatbot created with the [Watson Conversation](https://www.ibm.com/watson/developercloud/conversation.html) service on Bluemix.
+
+![bluedo2 chat](docs/bluedo2.png)
 
 Chat app based on [watson-bot-starter](https://github.com/sharpstef/watson-bot-starter).
